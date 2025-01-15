@@ -6,6 +6,7 @@
     <title>Introduction to PHP</title>
 </head>
 <body>
-    <h1>Introduction to PHP</h1>
+    <h1><?php echo 'Hello PHP on IIS' ?></h1>
+    <p>Содержимое страницы</p>
 </body>
 </html>

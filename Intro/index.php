@@ -1,12 +1,13 @@
-п»ї<!DOCTYPE html>
+<?php
+	$for = "Introduction to PHP2";
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Introduction to PHP</title>
-</head>
-<body>
-    <h1><?php echo 'Hello PHP on IIS' ?></h1>
-    <p>РЎРѕРґРµСЂР¶РёРјРѕРµ СЃС‚СЂР°РЅРёС†С‹</p>
-</body>
-</html>
+	//Consts
+	define('NAME', 'value');
+	//const PI = 3.14;
+	const PREFIX = 'OPTION';
+
+	$int = 1024;
+
+	require 'index.view.php';//Также как #include, встраивает содержимое целевого файла
+	//закрывающая метка в *.php файле не обязательна
+?>

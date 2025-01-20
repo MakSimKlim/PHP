@@ -14,6 +14,13 @@
     <?PHP factorial(5)?>
     <?PHP echo "!5 =", factorial(5)?>
     <?PHP echo 2**-3;?>
+    <p>Ряд Фибаначи</p>
+    <?PHP 
+        for ($i = 0; $i < 30; $i++) 
+        {
+            echo Fibonacci($i) . " ";
+        }
+    ?>
     <p>Содержимое страницы</p>
     <p>Statements</p>
     <p>$name=value</p>
@@ -109,6 +116,8 @@
         echo $heredoc_string;
         echo '<hr>';
          echo $nowdoc_string;
+        echo '<hr>';
+        echo $heredoc_string2;
         echo '<hr>';
     ?>
 

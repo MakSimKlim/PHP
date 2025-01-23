@@ -61,6 +61,38 @@
 		}
 	?>
 	</pre>
+	<hr>
+
+	<pre><?PHP
+		echo "Array of 5 random elements: ";
+		echo '<br>';
+		// Заполняем пустой массив пятью случайными числами
+		for ($i = 0; $i < 5; $i++) {
+			$array_random[] = rand(25, 30); // Добавляем случайное число от 25 до 30
+		}
+
+		// Находим сумму элементов массива
+		$sum = array_sum($array_random);
+
+		// Находим среднее арифметическое
+		$average = $sum / count($array_random);
+		
+		// Находим минимальное значение в массиве
+		$minValue = min($array_random);
+
+		// Находим максимальное значение в массиве
+		$maxValue = max($array_random);
+
+		// Выводим массив, сумму и среднее арифметическое
+		print_r($array_random);
+		echo "Sum: " . $sum . "\n";
+		echo "Arithmetic average: " . $average . "\n";
+		echo "Minimum value: " . $minValue . "\n";
+		echo "Maximum value: " . $maxValue . "\n";
+
+	?>
+	</pre>
+	<hr>
 
 
 </body>

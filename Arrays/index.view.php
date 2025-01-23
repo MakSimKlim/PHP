@@ -67,24 +67,25 @@
 		echo "Array of 5 random elements: ";
 		echo '<br>';
 		// Заполняем пустой массив пятью случайными числами
-		for ($i = 0; $i < 5; $i++) {
-			$array_random[] = rand(25, 30); // Добавляем случайное число от 25 до 30
+		for ($i = 0; $i < 5; $i++) 
+		{
+			$array_random5[] = rand(25, 30); // Добавляем случайное число от 25 до 30
 		}
 
 		// Находим сумму элементов массива
-		$sum = array_sum($array_random);
+		$sum = array_sum($array_random5);
 
 		// Находим среднее арифметическое
-		$average = $sum / count($array_random);
+		$average = $sum / count($array_random5);
 		
 		// Находим минимальное значение в массиве
-		$minValue = min($array_random);
+		$minValue = min($array_random5);
 
 		// Находим максимальное значение в массиве
-		$maxValue = max($array_random);
+		$maxValue = max($array_random5);
 
-		// Выводим массив, сумму и среднее арифметическое
-		print_r($array_random);
+		// Выводим массив, сумму, среднее арифметическое, min, max
+		print_r($array_random5);
 		echo "Sum: " . $sum . "\n";
 		echo "Arithmetic average: " . $average . "\n";
 		echo "Minimum value: " . $minValue . "\n";
@@ -92,7 +93,37 @@
 
 	?>
 	</pre>
-	<hr>
+	
+
+	<pre><?PHP
+		echo "Array of 10 random elements: ";
+		echo '<br>';
+		// Заполняем пустой массив десятью случайными числами
+		for ($i = 0; $i < 10; $i++) 
+		{
+			$array_random10[] = rand(25, 30); // Добавляем случайное число от 25 до 30
+		}
+		// Считаем количество повторений каждого значения
+		$counts = array_count_values($array_random10);
+
+		// Находим повторяющиеся значения
+		$duplicates = array_filter($counts, function($count) 
+										{
+											return $count > 1;
+										}
+								   );
+
+		// Выводим массив, повторяющиеся значения и их количество повторений
+		print_r($array_random10);
+		echo "Repeated values and number of repetitions:\n";
+		foreach ($duplicates as $value => $count) 
+		{
+			echo $value . " repeat " . $count . " times\n";
+		}
+		
+
+	?>
+	</pre>
 
 
 </body>

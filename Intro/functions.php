@@ -22,8 +22,28 @@ function Fibonacci($n)
 		return $n;
 	}
 	return Fibonacci($n-1) + Fibonacci($n-2);
-	
-	
+		
 }
+function dec_to_bin($n) {
+    $binary = '';
+    while ($n > 0) {
+        $binary = ($n % 2) . $binary;
+        $n = intdiv($n, 2);
+    }
+    return $binary;
+}
+
+function dec_to_hex($n) {
+    $hex = '';
+    $hexChars = '0123456789ABCDEF';
+    while ($n > 0) {
+        $hex = $hexChars[$n % 16] . $hex;
+        $n = intdiv($n, 16);
+    }
+    return $hex;
+}
+
+
+
 
 ?>

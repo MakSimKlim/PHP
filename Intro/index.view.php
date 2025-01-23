@@ -13,13 +13,26 @@
     <?PHP print_value('Test value: ', 1024)?>
     <?PHP factorial(5)?>
     <?PHP echo "!5 =", factorial(5)?>
-    <?PHP echo 2**-3;?>
+    <?PHP echo 2**-3;
+          echo '<hr>';
+    ?>
     <p>Ряд Фибаначи с помощью рекурсии</p>
-    <?PHP 
+    <?PHP         
         for ($i = 0; $i < 20; $i++) 
         {
             echo Fibonacci($i) . " ";
         }
+        echo '<hr>';
+    ?>
+    <p>Функции перевода десятичного числа в двоичное и шестнадцатиричное</p>
+    <?PHP 
+        $number = 42;
+        echo "Десятичное число: " . $number . "\n";
+        echo '<br>';
+        echo "Двоичное представление: " . dec_to_bin($number) . "\n";
+        echo '<br>';
+        echo "Шестнадцатеричное представление: " . dec_to_hex($number) . "\n";
+        echo '<hr>';
     ?>
     <p>Содержимое страницы</p>
     <p>Statements</p>

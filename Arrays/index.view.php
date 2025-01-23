@@ -7,7 +7,7 @@
 <body>
 	<h1><?= $title; ?></h1>
 
-	<?PHP
+	<!--<?PHP
 		echo '<hr>';
 		for($i=0; $i<count($array1); $i++)
 			echo "$array1[$i]\t";
@@ -124,6 +124,81 @@
 
 	?>
 	</pre>
+
+	<?php
+		
+		array_unshift($array1,2);
+		array_unshift($array1,1);
+		$array1[] = 340;
+		array_push($array1,550);
+		print_array($array1);
+		$keys = array_keys($array1);
+		print_array($keys);
+		echo array_key_exists(5, $array1);
+		echo in_array(13.21, $array1);
+
+		array_pop($array1);
+		array_pop($array1);
+		array_shift($array1);
+		array_shift($array1);
+		print_array($array1);
+
+		echo '<hr>';
+		$array0 = array_merge($array1, $array2);
+		print_array($array1);
+		print_array($array2);
+		print_array($array0);
+		echo '<hr>';
+		$array_spread = [...$array, ...$array0];
+		print_array($array_spread);
+		echo '<hr>';
+		echo '<h3>Arrays and variables</h3>';
+		//$Mercury = $distance_to_sun['Mercury'];
+		//$Venus = $distance_to_sun['Venus'];
+		//$Earth = $distance_to_sun['Earth'];
+
+		list
+		(
+			'Mercury' => $Mercury,
+			'Venus' => $Venus,
+			'Earth' => $Earth,
+		) = $distance_to_sun;
+		echo "$Mercury<br>";
+		echo "$Venus<br>";
+		echo "$Earth<br>";
+
+		//Деструктуризация
+		[$zero, $first, $second, $third] = $array1;
+		echo "$zero<br>";
+		echo "$first<br>";
+		echo "$second<br>";
+		echo "$third<br>";
+
+		[
+			'Mars' => $Mars,
+			'Jupiter' => $Jupiter
+		] = $distance_to_sun;
+
+		echo "$Mars<br>";
+		echo "$Jupiter<br>";
+
+		[,,,$var1, $var2] = $array1;
+		echo "$var1<br>";
+		echo "$var2<br>";
+	?>-->
+
+	<!--
+			Функции сортировки массивов
+	sort(); – сортирует массив в порядке возрастания
+	rsort(); – в порядке убывания
+	ksort(); – сортирует ключи ассоциативного массива
+
+	-->
+
+	<?php
+	rsort($array);
+	print_array($array);
+	?>
 
 
 </body>

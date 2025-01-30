@@ -1,4 +1,5 @@
 <?php require_once __DIR__.'/../config/app.php'?>
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">

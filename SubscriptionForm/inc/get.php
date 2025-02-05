@@ -19,5 +19,10 @@
                />
         <small><?php echo $errors['email'] ?? '' ?></small>
     </div>
+    <div>
+        <input type="checkbox" name="agree" id="agree">
+        <label for="agree">Принимаю условия лицензионного соглашения</label>
+    </div>
     <input type="submit" value="Подписаться"/>
 </form>
+

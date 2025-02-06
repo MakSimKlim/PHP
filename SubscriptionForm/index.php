@@ -33,16 +33,20 @@ echo '<hr>';
 //}
 
 echo '<hr>';
-const COLORS =
-	[
-		'black' => 'Черный',
-		'red' => 'Красный',
-		'green' => 'Зеленый',
-		'blue' => 'Синий',
-		'white' => 'Белый',
-	];
-if($_SERVER['REQUEST_METHOD'] === 'GET')		require_once __DIR__ . '/inc/getSelect.php';
-else if($_SERVER['REQUEST_METHOD'] === 'POST')	require_once __DIR__ . '/inc/postSelect.php';
+//const COLORS =
+//	[
+//		'black' => 'Черный',
+//		'red' => 'Красный',
+//		'green' => 'Зеленый',
+//		'blue' => 'Синий',
+//		'white' => 'Белый',
+//	];
+//if($_SERVER['REQUEST_METHOD'] === 'GET')		require_once __DIR__ . '/inc/getSelect.php';
+//else if($_SERVER['REQUEST_METHOD'] === 'POST')	require_once __DIR__ . '/inc/postSelect.php';
+
+echo '<hr>';
+if($_SERVER['REQUEST_METHOD'] === 'GET')		require_once __DIR__ . '/inc/getTest.php';
+else if($_SERVER['REQUEST_METHOD'] === 'POST')	require_once __DIR__ . '/inc/postTest.php';
 
 require_once __DIR__ . '/inc/footer.php';
 ?>

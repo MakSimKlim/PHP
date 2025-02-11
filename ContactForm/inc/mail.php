@@ -6,9 +6,9 @@ $contact_email = $inputs['email'];
 $subject = $inputs['subject'];
 $message = $inputs['message'];
 
-$headers[] = 'MIMI-Version: 1.0';
+$headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=utf-8';
-$headers[] = "To: {$resipient}";
+$headers[] = "To: {$recipient}";
 $headers[] = "From: {$contact_email}";
 $header = implode('\r\n', $headers);
 
@@ -16,3 +16,5 @@ mail($recipient, $subject, $message, $header);
 if(mail('mamkinhackermail@internet.ru', $subject, $message, $header))
 	echo 'Message sent';
 ?>
+
+<!--Нужен SMTP(Simple Mail Transfer Protocol) или PHPMailer-->

@@ -29,10 +29,10 @@
 		}
 		exit;
 	}
-	echo '<pre>';
-	print_r($_SESSION);
-	
-	echo '</pre>';
+
+	//echo '<pre>';
+	//print_r($_SESSION);	
+	//echo '</pre>';
 
 	require_once __DIR__ . '/inc/footer.php';
 ?>

@@ -1,6 +1,5 @@
 ﻿<?php
 if(isset($message)):
-
 ?>
 
 <div class="alert alert-success">
@@ -11,10 +10,9 @@ if(isset($message)):
 
 <form class="login-card" action="inc/post.php" method="post">
 	<div class="login-item"><h3>Введите Ваши данные:</h3></div>
-	<div class="login-item">
-		<label>Name:</label>		
-		<input type="string"	name="nickname"			id="nickname"			placeholder="Name">			
-		<small><?= $errors['name']?? ''?></small
+	<div class="login-item"><label>Name:</label>
+		<input type="string"	name="nickname"		id="nickname"		placeholder="Nickname">			
+		<small><?= $errors['name']?? ''?></small>
 	</div>
 	<div class="login-item">
 		<label>E-mail:</label>		

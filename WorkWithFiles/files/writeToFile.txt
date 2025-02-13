@@ -1,0 +1,1 @@
+Hello files from PHP!!!\nThis is a write message

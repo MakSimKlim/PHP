@@ -18,7 +18,7 @@
 	</audio>
 <?php endif?>
 
-<?php if($_FILES['file']['type'] === 'video/x-matroska'): ?>
+<?php if($_FILES['file']['type'] === 'video/mp4'): ?>
     <video controls ip="player">
         <source src="../uploads/<?=$_FILES['file']['name']?>">
     </video>

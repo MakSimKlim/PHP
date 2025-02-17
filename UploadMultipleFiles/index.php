@@ -8,7 +8,7 @@
 </head>
 <body>
     <main>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
+        <form action="inc/upload.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="files">Выберите файлы для загрузки:</label>
                 <input type="file" name="files[]" id="files" multiple required />
@@ -18,5 +18,11 @@
             </div>
         </form>
     </main>
+        <?php
+        echo '<pre>';
+        print_r($_SERVER);
+        echo '</pre>';
+    ?>
+
 </body>
 </html>

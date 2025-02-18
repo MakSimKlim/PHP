@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table 
+        {
+            border:solid 1px;
+        }
+        td 
+        {
+            border: solid 1px;
+        }
+    </style>
+    <title>AJAX</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript And XML</h1>
+    <div id="hello">
+        Здесь будет содержимое, полученное при помощи AJAX
+    </div>
+    <table id="catalog">
+        
+    </table>
+    <button type="button" onclick="loadDoc()">Load</button>
+    <script>
+        function loadDoc()
+        {
+            let request = new XMLHttpRequest();
+            request.onreadystatechange = function ()
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    //document.getElementsById("hello").innerHTML = this.responseText;
+                    loadXML(this);
+                }
+            };
+            //request.open("GET", "ajax_info.txt", true);
+            request.open("GET", "cd_catalog.xml", true);
+            request.send();
+        }
+        function loadXML(xml)
+        {
+            let table = "<tr><th>Artist</th><th>Title</th></tr>";
+            let catalog = xml.responseXML.getElementsByTagName("CD");
+            for (let i = 0; i < catalog.length; i++)
+            {
+                table += "<tr><td>";
+                table += catalog[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+                table += "</td><td>";
+                table += catalog[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+                table += "</td></tr>";
+            }
+            document.getElementById("catalog").innerHTML = table;
+        }
+    </script>
+</body>
+</html>

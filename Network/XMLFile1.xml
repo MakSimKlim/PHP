@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<notes>
+	<brick>
+		<width>120</width>
+		<length>250</length>
+		<height>88</height>
+	</brick>
+	<note>
+		<date>2025-02-238</date>
+		<time>9:00</time>
+		<event>Поздравить коллег</event>
+	</note>
+	<note>
+		<date>2025-03-08</date>
+		<time>9:00</time>
+		<event>Поздравить девушку</event>
+	</note>: 
+</notes>

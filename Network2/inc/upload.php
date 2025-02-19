@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 require_once '../functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['file']) && $_FILES['file']['type'] === 'text/plain') {
         $uploadDir = '../files/';
         $sourceFile = $uploadDir . basename($_FILES['file']['name']);
+        $base_name = pathinfo(basename($sourceFile), PATHINFO_FILENAME); // Получаем базовое имя файла без пути и расширения
 
         if (move_uploaded_file($_FILES['file']['tmp_name'], $sourceFile)) {
             echo 'Файл успешно загружен.<br>';
@@ -16,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $MACs = [];
             read_adresses_from_file($filenames['source'], $IPs, $MACs);
             write_adresses_from_file($filenames['WAL'], $IPs, $MACs);  // Сохранение в ready файл
-            write_adresses_from_file($filenames['DHCP'], $IPs, $MACs); // Сохранение в dhcpd файл
-            write_adresses_from_file($filenames[' ready.txt'], $IPs, $MACs); // Сохранение в txt файл
+            write_dhcpd_file($filenames['DHCP'], $IPs, $MACs, $base_name); // Сохранение в dhcpd файл
+            write_adresses_from_file($filenames['ready.txt'], $IPs, $MACs); // Сохранение в txt файл
 
             // Вывод содержимого новых файлов на страницу
-            echo '<h3>Содержимое файла ' . basename($filenames[' ready.txt']) . ' (таблица):</h3>';
-            print_table_from_file($filenames[' ready.txt']);
+            echo '<h3>Содержимое файла ' . basename($filenames['ready.txt']) . ' (таблица):</h3>';
+            print_table_from_file($filenames['ready.txt']);
 
             echo '<h3>Содержимое файла ' . basename($filenames['DHCP']) . ':</h3>';
             echo '<pre>' . htmlspecialchars(file_get_contents($filenames['DHCP'])) . '</pre>';

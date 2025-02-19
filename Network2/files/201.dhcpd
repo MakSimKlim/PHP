@@ -1,12 +1,144 @@
-00-19-99-b4-c2-ae	192.168.100.21
-00-19-99-ae-a8-8e	192.168.100.22
-00-19-99-b5-e9-9b	192.168.100.23
-00-19-99-b4-a2-ed	192.168.100.24
-00-19-99-ad-4f-51	192.168.100.25
-00-19-99-dc-52-80	192.168.100.26
-00-19-99-b4-a2-fb	192.168.100.27
-00-19-99-b2-b3-e6	192.168.100.28
-00-19-99-ae-a5-59	192.168.100.29
-00-19-99-dc-52-77	192.168.100.30
-00-19-99-ac-b8-11	192.168.100.31
-00-19-99-b5-e9-4d	192.168.100.32
+host 201 RAW-1
+{
+	hardware ethernet	00-19-99-b4-c2-ae;
+	fixed-address		192.168.100.21;
+}
+
+host 201 RAW-2
+{
+	hardware ethernet	00-19-99-b4-c2-ae;
+	fixed-address		192.168.100.21;
+}
+
+host 201 RAW-3
+{
+	hardware ethernet	00-19-99-ae-a8-8e;
+	fixed-address		192.168.100.22;
+}
+
+host 201 RAW-4
+{
+	hardware ethernet	00-19-99-ae-a8-8e;
+	fixed-address		192.168.100.22;
+}
+
+host 201 RAW-5
+{
+	hardware ethernet	00-19-99-b5-e9-9b;
+	fixed-address		192.168.100.23;
+}
+
+host 201 RAW-6
+{
+	hardware ethernet	00-19-99-b5-e9-9b;
+	fixed-address		192.168.100.23;
+}
+
+host 201 RAW-7
+{
+	hardware ethernet	00-19-99-b4-a2-ed;
+	fixed-address		192.168.100.24;
+}
+
+host 201 RAW-8
+{
+	hardware ethernet	00-19-99-b4-a2-ed;
+	fixed-address		192.168.100.24;
+}
+
+host 201 RAW-9
+{
+	hardware ethernet	00-19-99-ad-4f-51;
+	fixed-address		192.168.100.25;
+}
+
+host 201 RAW-10
+{
+	hardware ethernet	00-19-99-ad-4f-51;
+	fixed-address		192.168.100.25;
+}
+
+host 201 RAW-11
+{
+	hardware ethernet	00-19-99-dc-52-80;
+	fixed-address		192.168.100.26;
+}
+
+host 201 RAW-12
+{
+	hardware ethernet	00-19-99-dc-52-80;
+	fixed-address		192.168.100.26;
+}
+
+host 201 RAW-13
+{
+	hardware ethernet	00-19-99-b4-a2-fb;
+	fixed-address		192.168.100.27;
+}
+
+host 201 RAW-14
+{
+	hardware ethernet	00-19-99-b4-a2-fb;
+	fixed-address		192.168.100.27;
+}
+
+host 201 RAW-15
+{
+	hardware ethernet	00-19-99-b2-b3-e6;
+	fixed-address		192.168.100.28;
+}
+
+host 201 RAW-16
+{
+	hardware ethernet	00-19-99-b2-b3-e6;
+	fixed-address		192.168.100.28;
+}
+
+host 201 RAW-17
+{
+	hardware ethernet	00-19-99-ae-a5-59;
+	fixed-address		192.168.100.29;
+}
+
+host 201 RAW-18
+{
+	hardware ethernet	00-19-99-ae-a5-59;
+	fixed-address		192.168.100.29;
+}
+
+host 201 RAW-19
+{
+	hardware ethernet	00-19-99-dc-52-77;
+	fixed-address		192.168.100.30;
+}
+
+host 201 RAW-20
+{
+	hardware ethernet	00-19-99-dc-52-77;
+	fixed-address		192.168.100.30;
+}
+
+host 201 RAW-21
+{
+	hardware ethernet	00-19-99-ac-b8-11;
+	fixed-address		192.168.100.31;
+}
+
+host 201 RAW-22
+{
+	hardware ethernet	00-19-99-ac-b8-11;
+	fixed-address		192.168.100.31;
+}
+
+host 201 RAW-23
+{
+	hardware ethernet	00-19-99-b5-e9-4d;
+	fixed-address		192.168.100.32;
+}
+
+host 201 RAW-24
+{
+	hardware ethernet	00-19-99-b5-e9-4d;
+	fixed-address		192.168.100.32;
+}
+

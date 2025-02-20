@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>AJAX_PHP</title>
+</head>
+<body>
+    <h1>AJAX_PHP</h1>
+    <form>
+        <label for="first_name">Имя:</label>
+        <input id="first_name" placeholder="Введите Ваше имя" onkeyup="showHint(this.value)">
+
+    </form>
+    <div><label for="hint">Подсказка:</label><span id="hint"></span></div>
+
+    <script>
+        function showHint(str)
+        {
+            if (str.length == 0) document.getElementById("hint").innerHTML = "";
+            else
+            {
+                let request = new XMLHttpRequest();
+                request.onreadystatechange = function()
+                {
+                    if(this.readyState == 4 && this.status == 200)
+                        document.getElementById("hint").innerHTML = this.responseText;
+                };
+                //document.getElementById("hint").innerHTML = str;
+                request.open("GET", "gethint.php?q="+str, true);
+                request.send();
+            }
+        }
+    </script>
+</body>
+</html>

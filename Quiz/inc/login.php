@@ -1,4 +1,4 @@
-<form class="login-card" action="inc/quitz.php" method="post">
+<form class="login-card" action="inc/main.php" method="post">
 	<div class="login-item"><h3>Enter your name:</h3></div>
 	<div class="login-item"><label>Last name:</label>	<input type="string" name="last_name"	id="last_name"		placeholder="LastName">	 </div>
 	<div class="login-item"><label>First name:</label>	<input type="string" name="first_name"	id="first_name"		placeholder="FirstName"> </div>

@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 session_start();
 require_once __DIR__ . '/data.php';
 
@@ -70,16 +70,12 @@ $current_answers = $answers[$question_index];
     <?php else: ?>
         <input type="submit" name="next" value="Send">
     <?php endif; ?>
-</form>
-
-
-
-
+</form>-->
 
 
 
 <!-- Вариант для отображения всех вопросов на одной странице: -->
-<!-- <?php 
+<?php 
 	require_once __DIR__ . '/data.php';	
 	echo "Hello {$_POST['first_name']} {$_POST['last_name']} {$_POST['middle_name']}, удачи Вам!!!"; 
 ?>
@@ -93,4 +89,4 @@ $current_answers = $answers[$question_index];
 				<?php endfor ?>		
 	<?php endfor ?>
 	<input type="submit" value="Send" >
-</form>-->
+</form>

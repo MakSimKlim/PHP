@@ -1,9 +1,13 @@
 ﻿<?php
 require_once __DIR__.'/data.php';
 $number = $_REQUEST['q'];
+$answer;
+if(in_array('a', $_REQUEST))$answer = $_REQUEST['a'];
+print_r($_REQUEST);
 if($number < count($questions))
 {
 	echo $number;
+	echo $answer;
 	$response = "<h2>{$questions[$number]}</h2>";
 	for($i=0; $i < count($answers[$number]); $i++)
 	{

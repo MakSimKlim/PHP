@@ -13,12 +13,13 @@
     <script>
 
         var questionNumber = -1;
-        
+        var answer ;
 
         // Функция для загрузки вопроса
         function loadQuestion() 
         {
             let request = new XMLHttpRequest();
+            //let answer = getAnswer();
             request.onreadystatechange = function() 
             {
                 if (request.readyState === 4 && request.status === 200) 
@@ -26,13 +27,16 @@
                     document.getElementById("question_number").innerHTML = request.responseText;
                 }
             };
-            request.open("GET", "question.php?q=" + questionNumber, true);
+            if(answer==null)request.open("GET", "question.php?q=" + questionNumber, true);
+            else request.open("GET", "question.php?q=" + questionNumber+"&a="+answer.value, true);
+            //request.open("GET", "question.php?q=" + questionNumber, true);
+            //request.open("GET", "question.php?q=" + questionNumber+"?a="+answer_no, true);
             request.send();
         }
 
         function nextQuestion()
         {   
-            commitAnswer();
+            answer = getAnswer();
             questionNumber++;  // Увеличиваем только после первого вызова
             loadQuestion();
         }        
@@ -45,11 +49,12 @@
             }        
         }
 
-        function commitAnswer()
+        function getAnswer()
         {
             let answer = document.querySelector(`input[name="question_${questionNumber}"]:checked`);
             if (answer!=null) console.log(answer.value);
-            else console.log("No answer")         
+            else console.log("No answer");
+            return answer;
         }
 
 

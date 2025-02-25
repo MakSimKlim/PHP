@@ -12,8 +12,7 @@
     </form>
     <script>
 
-        var questionNumber = 0;
-        var firstLoad = true; // Флаг первого запуска
+        var questionNumber = -1;
 
         // Функция для загрузки вопроса
         function loadQuestion() 
@@ -32,14 +31,7 @@
 
         function nextQuestion(number)
         {      
-            if (firstLoad) 
-            {
-                firstLoad = false;  // Отключаем флаг после первого вызова
-            } 
-            else 
-            {
-                questionNumber++;  // Увеличиваем только после первого вызова
-            }
+            questionNumber++;  // Увеличиваем только после первого вызова
             loadQuestion();
         }        
         function prevQuestion(number)

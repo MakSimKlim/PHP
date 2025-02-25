@@ -1,7 +1,7 @@
 ﻿<?php
 require_once __DIR__.'/data.php';
 $number = $_REQUEST['q'];
-if($number < count($questions)-1)
+if($number < count($questions))
 {
 	echo $number;
 	$response = "<h2>{$questions[$number]}</h2>";

@@ -11,18 +11,46 @@
             
     </form>
     <script>
+
         var questionNumber = 0;
-        function nextQuestion(number)
+        var firstLoad = true; // Флаг первого запуска
+
+        // Функция для загрузки вопроса
+        function loadQuestion() 
         {
             let request = new XMLHttpRequest();
             request.onreadystatechange = function() 
             {
-                document.getElementById("question_number").innerHTML = request.responseText;
-            }
-            request.open("GET", "question.php?q="+questionNumber, true);
+                if (request.readyState === 4 && request.status === 200) 
+                {
+                    document.getElementById("question_number").innerHTML = request.responseText;
+                }
+            };
+            request.open("GET", "question.php?q=" + questionNumber, true);
             request.send();
-            questionNumber++;
         }
+
+        function nextQuestion(number)
+        {      
+            if (firstLoad) 
+            {
+                firstLoad = false;  // Отключаем флаг после первого вызова
+            } 
+            else 
+            {
+                questionNumber++;  // Увеличиваем только после первого вызова
+            }
+            loadQuestion();
+        }        
+        function prevQuestion(number)
+        {
+            if (questionNumber > 0) // Проверка, чтобы не уйти в отрицательные значения
+            { 
+                questionNumber--;  // Сначала уменьшаем
+                loadQuestion();    // Потом загружаем вопрос
+            }        
+        }
+
     </script>
 </body>
 </html>

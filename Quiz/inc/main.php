@@ -13,6 +13,7 @@
     <script>
 
         var questionNumber = -1;
+        
 
         // Функция для загрузки вопроса
         function loadQuestion() 
@@ -29,12 +30,13 @@
             request.send();
         }
 
-        function nextQuestion(number)
-        {      
+        function nextQuestion()
+        {   
+            commitAnswer();
             questionNumber++;  // Увеличиваем только после первого вызова
             loadQuestion();
         }        
-        function prevQuestion(number)
+        function prevQuestion()
         {
             if (questionNumber > 0) // Проверка, чтобы не уйти в отрицательные значения
             { 
@@ -42,6 +44,15 @@
                 loadQuestion();    // Потом загружаем вопрос
             }        
         }
+
+        function commitAnswer()
+        {
+            let answer = document.querySelector(`input[name="question_${questionNumber}"]:checked`);
+            if (answer!=null) console.log(answer.value);
+            else console.log("No answer")         
+        }
+
+
 
     </script>
 </body>

@@ -24,7 +24,11 @@ if($number < count($questions))
 	$response = "<h2>{$questions[$number]}</h2>";
 	for($i=0; $i < count($answers[$number]); $i++)
 	{
-		$response .= "<input type=\"radio\" id=\"{$number}_{$i}\" name=\"question_{$number}\" value=\"{$number}_{$i}\">";
+		if(array_key_exists('user_answers', $_SESSION) && array_key_exists($number, $_SESSION['user_answers']) && $i == $_SESSION['user_answers'][$number])
+			$response .= "<input type=\"radio\" id=\"{$number}_{$i}\" name=\"question_{$number}\" value=\"{$number}_{$i}\" checked>";
+
+		else 
+			$response .= "<input type=\"radio\" id=\"{$number}_{$i}\" name=\"question_{$number}\" value=\"{$number}_{$i}\">";
 		$response .= "<label for=\"{$number}_{$i}\">{$answers[$number][$i]};</label><br>";
 	}
 

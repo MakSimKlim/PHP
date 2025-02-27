@@ -2,12 +2,22 @@
 require_once __DIR__.'/data.php';
 $number = $_REQUEST['q'];
 $answer;
-if(in_array('a', $_REQUEST))$answer = $_REQUEST['a'];
+if(array_key_exists('a', $_REQUEST) == true)
+{
+	$answer = $_REQUEST['a'];
+	$question_number = explode('_', $answer)[0];
+	$user_answer = explode('_', $answer)[1];
+	$user_answers[$question_number] = $user_answer;
+	echo 'Answer:';
+	print_r($user_answers);
+}
+echo '<pre>';
 print_r($_REQUEST);
+print_r($user_answers);
+echo '</pre>';
 if($number < count($questions))
 {
-	echo $number;
-	echo $answer;
+	//echo $number;
 	$response = "<h2>{$questions[$number]}</h2>";
 	for($i=0; $i < count($answers[$number]); $i++)
 	{
@@ -28,7 +38,8 @@ else
 {
 	$response = "<h2>Вы ответили на все вопросы. Нажмите кнопку 'Submit' чтобы узнать результаты текста или 'prev' чтобы вернуться назад</h2>";
 	$response .= "<input type=\"button\" value=\"prev\" onclick=\"prevQuestion()\">";	
-	$response .= "<input type=\"submit\" value=\"submit\" onclick=\"result()\">";
+	$response .= "<input type=\"submit\" value=\"submit\">";
+	//$response .= "<input type=\"submit\" value=\"submit\" onclick=\"result()\">";
 }
 	echo $response;
 ?>

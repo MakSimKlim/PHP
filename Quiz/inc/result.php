@@ -24,6 +24,7 @@ echo "Number correct answers {$score} from {$total_questions}.";
 //	$variant = explode('_', $user_answer);
 //
 //}
+session_destroy();
 ?>
 
 <!--<?php

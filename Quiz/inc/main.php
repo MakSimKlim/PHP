@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,7 +7,7 @@
     <title>Quitz</title>
 </head>
 <body onload="nextQuestion()">
-    <h1 id="question_number" name="question_number">Quitz</h1>
+    <!--<h1 id="question_number" name="question_number">Quitz</h1>-->
     <form id="question_number" name="question_number" action="result.php" method="post">
     <!--<form id="question" action="result.php" method="post">-->
             

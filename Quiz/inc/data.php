@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = 'Quitz PD_321';
 
 $questions = 

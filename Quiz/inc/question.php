@@ -1,7 +1,8 @@
-﻿<?php
+<?php
 require_once __DIR__.'/data.php';
 $number = $_REQUEST['q'];
 $answer;
+echo '<pre>';
 if(array_key_exists('a', $_REQUEST) == true)
 {
 	$answer = $_REQUEST['a'];
@@ -9,11 +10,13 @@ if(array_key_exists('a', $_REQUEST) == true)
 	$user_answer = explode('_', $answer)[1];
 	$user_answers[$question_number] = $user_answer;
 	echo 'Answer:';
-	print_r($user_answers);
+	//print_r($user_answers);	
+	$_SESSION['user_answers'][$question_number] = $user_answer; 
+	print_r($_SESSION);
 }
-echo '<pre>';
+//
 print_r($_REQUEST);
-print_r($user_answers);
+//print_r($user_answers);
 echo '</pre>';
 if($number < count($questions))
 {

@@ -6,3 +6,8 @@
 	<div class="login-item"><label>E-mail:</label>		<input type="email"	 name="email"		id="email"			placeholder="E-mail">	 </div>
 	<div class="login-item"><label> </label><input type="submit" value="Start"></div>
 </form>
+<pre>
+<?php
+	print_r($_POST);
+?>
+</pre>

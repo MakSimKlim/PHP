@@ -3,6 +3,9 @@ require_once __DIR__.'/data.php';
 $number = $_REQUEST['q'];
 $answer;
 echo '<pre>';
+
+//$_SESSION['email'] = $_POST['email'];
+
 if(array_key_exists('a', $_REQUEST) == true)
 {
 	$answer = $_REQUEST['a'];

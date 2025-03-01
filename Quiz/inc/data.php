@@ -1,5 +1,8 @@
 <?php
 session_start();
+print_r($_SESSION);
+if(array_key_exists('email', $_POST))
+$_SESSION['email'] = $_POST['email'];
 $title = 'Quitz PD_321';
 
 $questions = 

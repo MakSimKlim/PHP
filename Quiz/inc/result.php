@@ -25,6 +25,11 @@ echo "Number correct answers {$score} from {$total_questions}.";
 //
 //}
 session_destroy();
+echo '<form action="/Quiz/index.php" method="post">';
+echo '<label><input type="checkbox" name="send_email" value="1"> Отправить результаты на e-mail?</label><br>';
+echo '<input type="submit" value="Завершить тестирование">';
+echo '</form>';
+
 ?>
 
 <!--<?php

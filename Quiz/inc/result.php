@@ -18,18 +18,39 @@ for($i = 0; $i < count($user_answers); $i++)
 	if($answer == $correct_answers[$origin_number])$score++;
 }
 $total_questions = count($user_answers);
-echo "Number correct answers {$score} from {$total_questions}.";
+//echo "Number correct answers {$score} from {$total_questions}.";
+$result_message = "Number correct answers {$score} from {$total_questions}.";
+echo $result_message;
 //foreach($POST as $user_answer)
 //{
 //	$variant = explode('_', $user_answer);
 //
 //}
-session_destroy();
+
+// добавляем чекбокс и кнопку
 echo '<form action="/Quiz/index.php" method="post">';
-echo '<label><input type="checkbox" name="send_email" value="1"> Отправить результаты на e-mail?</label><br>';
-echo '<input type="submit" value="Завершить тестирование">';
+echo '<label>Отправить результаты на e-mail?</label>';
+echo '<input type="checkbox" name="send_email" value="1">';
+echo '<input type="submit" name="end_test" value="Завершить тестирование">';
 echo '</form>';
 
+
+// Отправка e-mail, если установлен чекбокс и нажата кнопка 'Завершить тестирование'
+//if (isset($_POST['send_email']) && $_POST['send_email'] == '1' && isset($_POST['end_test']) && $_POST['end_test'] == 'Завершить тестирование') {
+    // Логика отправки e-mail
+    $to = 'maxklimov-job@yandex.ru';
+    //$to = $_SESSION['email']; // E-mail пользователя из сессии
+    $subject = 'Quitz test result';
+    $message = $result_message;
+    $headers = 
+        'From: maximklimov8319@yandex.ru' . "\r\n" . 
+        'Reply-To: maximklimov8319@yandex.ru' . "\r\n" . 
+        'X-Mailer: PHP/' . phpversion();
+    
+    mail($to, $subject, $message, $headers);
+//}
+
+session_destroy();
 ?>
 
 <!--<?php

@@ -1,0 +1,21 @@
+﻿body
+{
+    font-family:Arial;
+    background-color:lightgray;
+}
+
+table, th, td
+{
+    border:solid 1px;
+    border-collapse:collapse;
+}
+
+th 
+{
+    padding: 15px;
+}
+
+td 
+{
+    padding: 5px;
+}

@@ -86,10 +86,23 @@ echo '</table>';*/
 
 
 //save($group, "group.csv");
-echo '<pre>';
-$group = load("group.csv");
-echo '</pre>';
+//echo '<pre>';
+//$group = load("group.csv");
+//echo '</pre>';
+//table_group($group);
+//echo serialize($group);
 
-table_group($group);
+//$file = fopen("serial.txt", "w");
+//fwrite($file, serialize($group));
+//fclose($file);
+
+file_put_contents("walter.txt", serialize($group));
+table_group(unserialize(file_get_contents("walter.txt")));
+
+//$buffer = file_get_contents("serial.txt");
+//$group = unserialize($buffer);
+//table_group($group);
+
+
 
 ?>

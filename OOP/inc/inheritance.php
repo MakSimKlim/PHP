@@ -48,6 +48,12 @@ class Human
 	function info()
 	{		
 	}
+	//функция для возврата строки в формате csv (Comma-Separated Values)
+	function csv()
+	{
+		$type = get_class($this);
+		return "{$type}:{$this->first_name},{$this->last_name},{$this->age}";
+	}
 
 	// вывод
 	function __tostring()
@@ -119,6 +125,13 @@ class Student extends Human
 		return "Group:{$this->get_group()}, Rating:{$this->get_rating()}, Attendance:{$this->get_attendance()}";
 	}
 
+	//функция для возврата строки в формате csv (Comma-Separated Values)
+	function csv()
+	{
+		return parent::csv() . ",{$this->speciality},{$this->group},{$this->rating},{$this->attendance}";
+	}
+
+
 	// вывод
 	function __tostring()
 	{
@@ -161,6 +174,13 @@ class Graduate extends Student
 	{	
 		return parent::info() . " Subject:{$this->get_subject()}";
 	}
+
+	//функция для возврата строки в формате csv (Comma-Separated Values)
+	function csv()
+	{
+		return parent::csv() . ",{$this->subject}";
+	}
+
 
 		// вывод
 	function __tostring()
@@ -209,6 +229,12 @@ class Teacher extends Human
 	function info()
 	{	
 		return " Experience:{$this->get_experience()}";
+	}
+
+	//функция для возврата строки в формате csv (Comma-Separated Values)
+	function csv()
+	{
+		return parent::csv() . ",{$this->speciality},{$this->experience}";
 	}
 
 

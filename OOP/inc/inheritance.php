@@ -215,7 +215,7 @@ class Teacher extends Human
 	// вывод
 	function __tostring()
 	{
-		return parent::__tostring() . " {$this->get_speciality()} {$this->get_experience()}<br>";
+		return parent::__tostring() . " {$this->get_speciality()} {$this->get_experience()}";
 	}
 
 

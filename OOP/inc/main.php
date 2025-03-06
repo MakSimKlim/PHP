@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ .'/point.php';
 require_once __DIR__ .'/inheritance.php';
+require_once __DIR__ .'/data.php';
 
 //$A = new Point();
 ////$A->set_x(1024);
@@ -78,5 +79,14 @@ for($i=0; $i < count($group); $i++)
 	echo '</tr>';
 }
 echo '</table>';
+
+///////////////////////////////////////////////////////////////
+
+$file = fopen("group.txt", "w");
+for($i = 0; $i < count($group); $i++)
+{
+	fwrite($file, $group[$i] . "\n");
+}
+fclose($file);
 
 ?>

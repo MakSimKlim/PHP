@@ -1,0 +1,19 @@
+﻿body 
+{
+    /*background-color:lightgreen;*/
+}
+table
+{
+    width:100%;
+    border:solid 1px;
+    border-collapse:collapse;
+}
+td, th
+{
+    border:solid 1px;
+}
+th
+{
+    height:50px;
+    text-align:center;
+}

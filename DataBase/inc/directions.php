@@ -18,6 +18,7 @@ $results = sqlsrv_query($connection, $query);
 
 //if($results->num_rows>0)
 //{
+	$row;
 	echo '<table>';
 	echo '<tr>';	
 	echo '<th>';	
@@ -40,6 +41,13 @@ $results = sqlsrv_query($connection, $query);
 		echo $row["direction_name"];
 		echo '</td>';
 
+		echo '<td>';
+			echo '<pre>';
+			var_dump($row);
+			print_r($row);
+			echo '</pre>';
+		echo '</td>';
+
 		echo '</tr>';	
 	}
 	echo '</table>';
@@ -50,6 +58,12 @@ echo '<pre>';
 var_dump($results);
 print_r($results);
 echo '</pre>';
+
+echo '<pre>';
+var_dump($row);
+print_r($row);
+echo '</pre>';
+
 
 //echo '<pre>';
 //echo print_r(sqlsrv_errors(), true); // Вывод ошибок, если подключение не удалось

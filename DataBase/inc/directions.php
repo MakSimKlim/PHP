@@ -1,8 +1,9 @@
 <?php
-$server_name = "EVEREST";
-//$connection_info = array("Database" => "PD_212");
-//$connection_info = array("Database" => "PD_212", "UID"=>"PHP", "PWD" => "111", "CharacterSet" => "UTF-8");
-//$connection_info = array("Database" => "PD_212", "UID"=>"PHP", "PWD" => "111");
+//phpinfo();
+
+$server_name = "VANYACOMP"; // Домашний сервер
+//$server_name = "EVEREST"; // Сервер на работе
+
 $connection_info = array("Database" => "PD_212", "UID"=>"PHP", "PWD" => "111", "CharacterSet" => "UTF-8");
 //$connection_info = array("UID"=>"PHP", "PWD" => "111");
 

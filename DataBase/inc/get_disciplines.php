@@ -1,5 +1,33 @@
 ﻿<?php
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Автоматизация выбора подходящего сервера для подключения к базе данных
+$servers = array("DELL", "EVEREST", "VANYACOMP"); // Список серверов
+$connection = null;
 
+// Перебор серверов для установления соединения
+foreach ($servers as $server_name) {
+    $connection_info = array("UID" => "PHP", "PWD" => "111", "DataBase" => "PD_212", "CharacterSet" => "UTF-8");
+
+    $connection = sqlsrv_connect($server_name, $connection_info);
+
+    if ($connection) {
+		echo '<br>';
+        echo "Соединение успешно установлено с сервером: " . $server_name . "<br>";
+        break; // Прекращаем цикл, если удалось подключиться
+    } else {
+		echo '<br>';
+        echo "Не удалось подключиться к серверу: " . $server_name . "<br>";
+    }
+}
+
+// Если соединение не удалось установить
+if (!$connection) {
+    die("Не удалось подключиться ни к одному серверу.");
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//Вариант выбора сервера для подключения к базе данных в ручном режиме
+/*
 //$server_name = "DELL"; // Домашний сервер на буке
 $server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
@@ -7,6 +35,7 @@ $server_name = "VANYACOMP"; // Домашний сервер
 $connection_info = array("UID"=>"PHP", "PWD"=>"111", "DataBase"=>"PD_212", "CharacterSet" => "UTF-8");
 
 $connection = sqlsrv_connect($server_name, $connection_info);
+*/
 
 $query = "SELECT
 		discipline_id,

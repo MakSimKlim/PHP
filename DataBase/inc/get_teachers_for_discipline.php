@@ -8,7 +8,9 @@ $id=$_REQUEST["id"];
 
 if($id>0)
 {
-$server_name = "VANYACOMP";
+$server_name = "DELL"; // Домашний сервер на буке
+//$server_name = "VANYACOMP"; // Домашний сервер
+//$server_name = "EVEREST"; // Сервер на работе
 $connection_info = array("DataBase" => "PD_212", "UID"=>"PHP", "PWD"=>"111", "CharacterSet" => "UTF-8");
 
 $connection = sqlsrv_connect($server_name, $connection_info);
@@ -56,10 +58,10 @@ WHERE	discipline_id = {$id}";
 
 		echo '</tr>';
 	}
-
-
-sqlsrv_close($connection);
+	sqlsrv_close($connection);
 }
+
+
 else
 {
 	require_once __DIR__ . '/get_teachers.php';

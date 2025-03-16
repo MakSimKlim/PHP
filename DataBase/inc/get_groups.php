@@ -5,7 +5,8 @@
 //echo '</td>';
 //echo '</tr>';
 
-$server_name = "VANYACOMP"; // Домашний сервер
+$server_name = "DELL"; // Домашний сервер на буке
+//$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
 //$username = "PHP";
 //$password = "111";

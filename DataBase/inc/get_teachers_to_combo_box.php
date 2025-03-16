@@ -8,38 +8,23 @@ $connection_info = array("UID"=>"PHP", "PWD"=>"111", "DataBase"=>"PD_212", "Char
 
 $connection = sqlsrv_connect($server_name, $connection_info);
 
-$query = "SELECT
-		teacher_id,
-		FORMATMESSAGE(N'%s %s %s', last_name, first_name, middle_name) AS 'full_name',
-		birth_date,
-		DATEDIFF(DAY, work_since, GETDATE())/365 AS 'experience'
+$query =	"SELECT 
+			teacher_id, 
+			FORMATMESSAGE(N'%s %s %s', last_name, first_name, middle_name) AS 'full_name' 
+			--last_name 
 FROM Teachers";
 
 $result = sqlsrv_query($connection, $query);
 
 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
-{	echo '<tr>';
-
-	echo '<td>';
-	echo $row["teacher_id"];
-	echo '</td>';
-
-	echo '<td>';
+{
+	echo "<option value=\"{$row["teacher_id"]}\">";
 	echo $row["full_name"];
-	echo '</td>';
-
-	echo '<td>';
-	echo $row["birth_date"]->format('d.m.Y');
-	echo '</td>';
-
-	echo '<td>';
-	echo $row["experience"];
-	echo '</td>';
-
-
-	echo '</tr>';
+	//echo $row["last_name"];
+	echo '</option>';
 }
 
 sqlsrv_close($connection);
+
 
 ?>

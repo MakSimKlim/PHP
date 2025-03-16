@@ -1,8 +1,9 @@
 <?php
 //phpinfo();
+//sqlsrv_configure("LogSubsystems", SQLSRV_LOG_SYSTEM_CONN);
 
-$server_name = "DELL"; // Домашний сервер на буке
-//$server_name = "VANYACOMP"; // Домашний сервер
+//$server_name = "DELL"; // Домашний сервер на буке
+$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
 
 $connection_info = array("Database" => "PD_212", "UID"=>"PHP", "PWD" => "111", "CharacterSet" => "UTF-8");
@@ -11,7 +12,7 @@ $connection_info = array("Database" => "PD_212", "UID"=>"PHP", "PWD" => "111", "
 $connection = sqlsrv_connect($server_name, $connection_info);
 //$connection = sqlsrv_connect($server_name, array());
 
-var_dump($connection);
+//var_dump($connection);
 
 $query = "SELECT * FROM Directions;";
 $results = sqlsrv_query($connection, $query);
@@ -42,7 +43,6 @@ $results = sqlsrv_query($connection, $query);
 		echo '<td>';
 		echo $row["direction_name"];
 		echo '</td>';
-
 		echo '<td>';
 			echo '<pre>';
 			var_dump($row);
@@ -56,20 +56,14 @@ $results = sqlsrv_query($connection, $query);
 //}
 
 echo '<pre>';
-//echo var_dump($connection); // Вывод ошибок, если подключение не удалось
-var_dump($results);
-print_r($results);
-echo '</pre>';
-
-echo '<pre>';
 var_dump($row);
 print_r($row);
 echo '</pre>';
 
-
-//echo '<pre>';
-//echo print_r(sqlsrv_errors(), true); // Вывод ошибок, если подключение не удалось
-//echo '</pre>';
+echo '<pre>';
+var_dump($results);
+print_r($results);
+echo '</pre>';
 
 sqlsrv_close($connection);
 phpinfo();

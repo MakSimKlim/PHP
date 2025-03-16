@@ -9,27 +9,29 @@
 <body>
     <h1>Преподаватели</h1>
     <h2>Дисциплины</h2>
+
     <select onchange="getTeachersForDiscipline(this.value)">
-        <!---->
+        <!--<option value="value">text</option>-->
         <option value = "0" style="text-align:center;">
             --- Все дисциплины ---
         </option>
         <?php require_once __DIR__ . '/get_disciplines_to_combo_box.php'?>
     </select>
+
     <table>
         <thead>
             <tr>
-            <th>ID</th>
-            <th>Имя</th>
-            <th>Дата рождения</th>
-            <th>Опыт работы</th>
-        </tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Дата рождения</th>
+                <th>Опыт работы</th>
+            </tr>
         </thead>
         <tbody id="table-teachers">
                 <?php require_once __DIR__ . '/get_teachers.php' ?>
         </tbody>
-
     </table>
+
     <script>
         function getTeachersForDiscipline(id)
         {
@@ -37,7 +39,7 @@
             //{
                 console.log(id);
                 let request = new XMLHttpRequest();
-                request.onreadystatechange = function ()
+                request.onreadystatechange = function()
                 {
                     if(this.readyState == 4 && this.status == 200)
                     //document.getElementById("table-teachers").append(this.responseText);

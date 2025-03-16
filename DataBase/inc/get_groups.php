@@ -5,8 +5,8 @@
 //echo '</td>';
 //echo '</tr>';
 
-$server_name = "DELL"; // Домашний сервер на буке
-//$server_name = "VANYACOMP"; // Домашний сервер
+//$server_name = "DELL"; // Домашний сервер на буке
+$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
 //$username = "PHP";
 //$password = "111";
@@ -29,12 +29,12 @@ $query =
 FROM		Students 
 RIGHT JOIN	Groups		ON ([group]=group_id)
 RIGHT JOIN	Directions	ON (direction = direction_id)
-GROUP BY	group_id, group_name, direction_name";
+GROUP BY	group_id, group_name, direction_name;";
 $result = sqlsrv_query($connection, $query);
 
-//echo '<pre>';
-//var_dump($result);
-//echo '</pre>';
+echo '<pre>';
+var_dump($result);
+echo '</pre>';
 
 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
 {
@@ -55,8 +55,6 @@ while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
 	echo '<td>';
 	echo $row['direction_name'];
 	echo '</td>';
-
-
 
 	echo '</tr>';
 }

@@ -5,6 +5,7 @@
 //echo '</td>';
 //echo '</tr>';
 
+/*
 $server_name = "DELL"; // Домашний сервер на буке
 //$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
@@ -14,6 +15,11 @@ $server_name = "DELL"; // Домашний сервер на буке
 $connection_info = array("Database"=>"PD_212", "UID"=>"PHP", "PWD"=>"111", "CharacterSet" => "UTF-8");
 
 $connection = sqlsrv_connect($server_name, $connection_info);
+*/
+
+require_once __DIR__ . '/functions.php'; // Подключаем файл с функцией
+
+$connection = connectServersToDataBase();// функция подключения серверов к базе данных
 
 //echo '<pre>';
 //var_dump($connection);
@@ -30,6 +36,7 @@ FROM		Students
 RIGHT JOIN	Groups		ON ([group]=group_id)
 RIGHT JOIN	Directions	ON (direction = direction_id)
 GROUP BY	group_id, group_name, direction_name;";
+
 $result = sqlsrv_query($connection, $query);
 
 echo '<pre>';

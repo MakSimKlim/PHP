@@ -2,6 +2,7 @@
 //phpinfo();
 //sqlsrv_configure("LogSubsystems", SQLSRV_LOG_SYSTEM_CONN);
 
+/*
 $server_name = "DELL"; // Домашний сервер на буке
 //$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
@@ -11,8 +12,14 @@ $connection_info = array("Database" => "PD_212", "UID"=>"PHP", "PWD" => "111", "
 
 $connection = sqlsrv_connect($server_name, $connection_info);
 //$connection = sqlsrv_connect($server_name, array());
+*/
+
+require_once __DIR__ . '/functions.php'; // Подключаем файл с функцией
+
+$connection = connectServersToDataBase(); // функция подключения серверов к базе данных
 
 //var_dump($connection);
+
 
 $query = "SELECT * FROM Directions;";
 $results = sqlsrv_query($connection, $query);

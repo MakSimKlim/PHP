@@ -1,30 +1,4 @@
 ﻿<?php
-///////////////////////////////////////////////////////////////////////////////////////////////
-//Автоматизация выбора подходящего сервера для подключения к базе данных
-$servers = array("DELL", "EVEREST", "VANYACOMP"); // Список серверов
-$connection = null;
-
-// Перебор серверов для установления соединения
-foreach ($servers as $server_name) {
-    $connection_info = array("UID" => "PHP", "PWD" => "111", "DataBase" => "PD_212", "CharacterSet" => "UTF-8");
-
-    $connection = sqlsrv_connect($server_name, $connection_info);
-
-    if ($connection) {
-		echo '<br>';
-        echo "Соединение успешно установлено с сервером: " . $server_name . "<br>";
-        break; // Прекращаем цикл, если удалось подключиться
-    } else {
-		echo '<br>';
-        echo "Не удалось подключиться к серверу: " . $server_name . "<br>";
-    }
-}
-
-// Если соединение не удалось установить
-if (!$connection) {
-    die("Не удалось подключиться ни к одному серверу.");
-}
-///////////////////////////////////////////////////////////////////////////////////////////////
 
 //Вариант выбора сервера для подключения к базе данных в ручном режиме
 /*
@@ -36,6 +10,10 @@ $connection_info = array("UID"=>"PHP", "PWD"=>"111", "DataBase"=>"PD_212", "Char
 
 $connection = sqlsrv_connect($server_name, $connection_info);
 */
+
+require_once __DIR__ . '/functions.php'; // Подключаем файл с функцией
+
+$connection = connectServersToDataBase();// функция подключения серверов к базе данных
 
 $query = "SELECT
 		discipline_id,

@@ -11,12 +11,16 @@ if($id>0)
 
 //function get_teachers_for_discipline($id)
 {
-$server_name = "DELL"; // Домашний сервер на буке
+/*$server_name = "DELL"; // Домашний сервер на буке
 //$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
 $connection_info = array("DataBase" => "PD_212", "UID"=>"PHP", "PWD"=>"111", "CharacterSet" => "UTF-8");
 
-$connection = sqlsrv_connect($server_name, $connection_info);
+$connection = sqlsrv_connect($server_name, $connection_info);*/
+
+require_once __DIR__ . '/functions.php'; // Подключаем файл с функцией
+
+$connection = connectServersToDataBase();// функция подключения серверов к базе данных
 
 //echo '<pre>';
 //var_dump($connection);

@@ -2,8 +2,8 @@
 //phpinfo();
 //sqlsrv_configure("LogSubsystems", SQLSRV_LOG_SYSTEM_CONN);
 
-//$server_name = "DELL"; // Домашний сервер на буке
-$server_name = "VANYACOMP"; // Домашний сервер
+$server_name = "DELL"; // Домашний сервер на буке
+//$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
 
 $connection_info = array("Database" => "PD_212", "UID"=>"PHP", "PWD" => "111", "CharacterSet" => "UTF-8");

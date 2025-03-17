@@ -32,6 +32,8 @@
         </tbody>
     </table>
 
+    <div id="teachers-count"></div>
+
     <script>
         function getTeachersForDiscipline(id)
         {
@@ -45,6 +47,14 @@
                     //document.getElementById("table-teachers").append(this.responseText);
                     document.getElementById("table-teachers").innerHTML = this.responseText;
 
+                    // Подсчитываем количество строк в таблице
+                    const rows = document.querySelectorAll("#table-teachers tr");
+                    const count = rows.length;
+
+                    // Обновляем текст с количеством преподавателей
+                    document.getElementById("teachers-count").textContent = `Количество преподавателей: ${count}`;
+
+                
                 };
                     request.open("GET", "get_teachers_for_discipline.php?id="+id, true);
                     request.send();

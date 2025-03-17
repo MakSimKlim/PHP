@@ -10,8 +10,8 @@ $id=$_REQUEST["id"];
 if($id>0)
 {
 
-//$server_name = "DELL"; // Домашний сервер на буке
-$server_name = "VANYACOMP"; // Домашний сервер
+$server_name = "DELL"; // Домашний сервер на буке
+//$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
 $connection_info = array("DataBase" => "PD_212", "UID"=>"PHP", "PWD"=>"111", "CharacterSet" => "UTF-8");
 

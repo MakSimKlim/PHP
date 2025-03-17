@@ -30,6 +30,9 @@
     </tbody>
 </table>
 
+<div id="disciplines-count"></div>
+
+
 <script>
     function getDisciplinesForTeacher(id)
     {
@@ -39,6 +42,14 @@
         {
             if(this.readyState == 4 && this.status == 200)
             document.getElementById("table-disciplines").innerHTML = this.responseText;
+
+            // Подсчитываем количество строк в таблице
+            const rows = document.querySelectorAll("#table-disciplines tr");
+            const count = rows.length;
+
+            // Обновляем текст с количеством преподавателей
+            document.getElementById("disciplines-count").textContent = `Количество дисциплин: ${count}`;
+
         };
         request.open("GET", "get_disciplines_for_teacher.php?id="+id, true);
         request.send();

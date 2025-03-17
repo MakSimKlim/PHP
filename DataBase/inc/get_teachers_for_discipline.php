@@ -11,8 +11,8 @@ if($id>0)
 
 //function get_teachers_for_discipline($id)
 {
-//$server_name = "DELL"; // Домашний сервер на буке
-$server_name = "VANYACOMP"; // Домашний сервер
+$server_name = "DELL"; // Домашний сервер на буке
+//$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
 $connection_info = array("DataBase" => "PD_212", "UID"=>"PHP", "PWD"=>"111", "CharacterSet" => "UTF-8");
 

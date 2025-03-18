@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -42,7 +42,7 @@
         {
             //if(id>0)
             //{
-                console.log(id);
+                //console.log(id);
                 let request = new XMLHttpRequest();
                 request.onreadystatechange = function()
                 {

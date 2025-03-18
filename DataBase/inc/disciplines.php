@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -42,7 +42,8 @@
         {
             if(this.readyState == 4 && this.status == 200)
             document.getElementById("table-disciplines").innerHTML = this.responseText;
-
+            console.log(this.responseText);
+            console.table(this.responseText);
             // Подсчитываем количество строк в таблице
             const rows = document.querySelectorAll("#table-disciplines tr");
             const count = rows.length;
@@ -58,3 +59,4 @@
 
 </body>
 </html>
+

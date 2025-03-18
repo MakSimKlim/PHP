@@ -1,4 +1,5 @@
 <?php
+/*
 //phpinfo();
 //sqlsrv_configure("LogSubsystems", SQLSRV_LOG_SYSTEM_CONN);
 
@@ -13,9 +14,17 @@ $connection = sqlsrv_connect($server_name, $connection_info);
 //$connection = sqlsrv_connect($server_name, array());
 
 //var_dump($connection);
+*/
+
+require_once __DIR__ . '/connection.php';
 
 $query = "SELECT * FROM Directions;";
 $results = sqlsrv_query($connection, $query);
+
+echo '<pre>';
+var_dump($results);
+print_r($results);
+echo '</pre>';
 
 //$results = $connection->query($query); //MySQL
 

@@ -14,12 +14,18 @@ require_once __DIR__ . '/functions.php'; // Подключаем файл с ф�
 
 $connection = connectServersToDataBase();// функция подключения серверов к базе данных
 
+// Получаем параметры сортировки из GET-запроса
+$sort_column = $_GET['sort_column'] ?? 'teacher_id'; // Столбец по умолчанию
+$sort_order = $_GET['sort_order'] ?? 'asc'; // Порядок по умолчанию
+
+// Составляем SQL-запрос с сортировкой
 $query = "SELECT
 		teacher_id,
 		FORMATMESSAGE(N'%s %s %s', last_name, first_name, middle_name) AS 'full_name',
 		birth_date,
 		DATEDIFF(DAY, work_since, GETDATE())/365 AS 'experience'
-FROM Teachers";
+FROM Teachers
+ORDER BY $sort_column " . ($sort_order === 'asc' ? 'ASC' : 'DESC');
 
 $result = sqlsrv_query($connection, $query);
 

@@ -1,10 +1,13 @@
 <?php
+require_once __DIR__ . '/connection.php';
+echo '<pre>';
+print_r($_REQUEST);
+echo '</pre>';
 
-function get_teacher_from_base($id)
+//function get_teacher_from_base($id)
 {
-	require_once __DIR__ . '/connection.php';
 
-	$query = "SELECT * FROM teachers WHERE teacher_id={$id}";
+	$query = "SELECT * FROM teachers WHERE teacher_id={$_REQUEST['id']}";
 	$result = sqlsrv_query($connection, $query);
 	echo '<pre>';
 	//print_r($result);

@@ -7,7 +7,7 @@ echo '</pre>';
 //function get_teacher_from_base($id)
 {
 
-	$query = "SELECT * FROM teachers WHERE teacher_id={$_REQUEST['id']}";
+	$query = "SELECT * FROM Teachers WHERE teacher_id={$_REQUEST['id']}";
 	$result = sqlsrv_query($connection, $query);
 	echo '<pre>';
 	//print_r($result);

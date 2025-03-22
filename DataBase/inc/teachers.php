@@ -9,15 +9,16 @@
 <body>
     <h1>Преподаватели</h1>
     <h2>Дисциплины</h2>
-
-    <select onchange="getTeachersForDiscipline(this.value)">
-        <!--<option value="value">text</option>-->
-        <option value = "0" style="text-align:center;">
-            --- Все дисциплины ---
-        </option>
-        <?php require_once __DIR__ . '/get_disciplines_to_combo_box.php'?>
-    </select>
-
+    <form action="teacher_create_form.html" >
+        <select onchange="getTeachersForDiscipline(this.value)">
+            <!--<option value="value">text</option>-->
+            <option value = "0" style="text-align:center;">
+                --- Все дисциплины ---
+            </option>
+            <?php require_once __DIR__ . '/get_disciplines_to_combo_box.php'?>
+        </select>
+        <input type="submit" value="Добавить">
+    </form>
     <table>
         <thead>
             <tr>

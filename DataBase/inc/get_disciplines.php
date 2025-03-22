@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 //$server_name = "EVEREST"; // Сервер на работе
 $server_name = "VANYACOMP"; // Домашний сервер
@@ -11,11 +11,13 @@ $connection = sqlsrv_connect($server_name, $connection_info);
 //require_once __DIR__ . '/connection.php';
 require_once __DIR__ . '/format_table.php';
 
-$query = "SELECT
-		discipline_id,
-		discipline_name,
-		number_of_lessons
-FROM Disciplines";
+//$query = "SELECT
+//		discipline_id,
+//		discipline_name,
+//		number_of_lessons
+//FROM Disciplines";
+
+$query = "SELECT * FROM Disciplines";
 
 
 $result = sqlsrv_query($connection, $query);

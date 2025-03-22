@@ -25,6 +25,7 @@
                 <th>Имя</th>
                 <th>Дата рождения</th>
                 <th>Опыт работы</th>
+                <th>Подробности</th>
             </tr>
         </thead>
         <tbody id="table-teachers">

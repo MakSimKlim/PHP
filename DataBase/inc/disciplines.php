@@ -23,6 +23,7 @@
             <th>ID</th>
             <th>Наименование дисциплины</th>
             <th>Количество уроков</th>
+            <th>Подробности</th>
         </tr>
     </thead>
     <tbody id="table-disciplines">

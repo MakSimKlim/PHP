@@ -7,7 +7,14 @@ echo '</pre>';
 //function get_teacher_from_base($id)
 {
 
-	$query = "SELECT * FROM Teachers WHERE teacher_id={$_REQUEST['id']}";
+	//$query = "SELECT * FROM Teachers WHERE teacher_id={$_REQUEST['id']}";
+	$query = "
+SELECT *
+FROM Teachers t, TeachersDisciplinesRelation td, Disciplines d
+WHERE t.teacher_id = td.teacher 
+AND td.discipline = d.discipline_id
+AND t.teacher_id = {$_REQUEST['id']}";
+
 	$result = sqlsrv_query($connection, $query);
 	echo '<pre>';
 	//print_r($result);
@@ -37,6 +44,21 @@ echo '</pre>';
 		echo '</pre>';
 
 		echo "Опыт преподавания: {$daterange->format('%y years')}";
+
+		//echo "<h4>Дисциплины, которые преподает:{$row['discipline_name']}</h4>";
+		echo "<h4>Дисциплины, которые преподает:</h4><ul>";
+		do 
+		{
+		    // Вывод каждой дисциплины в виде списка
+		    echo "<li>{$row['discipline_name']}</li>";
+		} 
+		while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC));
+		echo "</ul>";
+
+
+
+
+
 
 	}
 }

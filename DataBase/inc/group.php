@@ -15,6 +15,14 @@ JOIN Directions ON (direction=direction_id)
 WHERE group_id={$_REQUEST['id']}
 GROUP BY group_id,group_name,direction_name";
 
+//"SELECT group_id,group_name,direction_name,COUNT(stud_id) AS students_count
+//FROM Students,Groups,Directions 
+//WHERE group_id={$_REQUEST['id']}
+//AND direction=direction_id
+//AND [group]=group_id
+//GROUP BY group_id,group_name,direction_name";
+
+
 	$result = sqlsrv_query($connection, $query);
 	echo '<pre>';
 	//print_r($result);

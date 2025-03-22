@@ -1,14 +1,14 @@
 <?php
-/*
-//$server_name = "DELL"; // Домашний сервер на буке
-//$server_name = "VANYACOMP"; // Домашний сервер
-$server_name = "EVEREST"; // Сервер на работе
+
+//$server_name = "EVEREST"; // Сервер на работе
+$server_name = "VANYACOMP"; // Домашний сервер
 
 $connection_info = array("UID"=>"PHP", "PWD"=>"111", "DataBase"=>"PD_212", "CharacterSet" => "UTF-8");
 
 $connection = sqlsrv_connect($server_name, $connection_info);
-*/
-require_once __DIR__ . '/connection.php';
+
+
+//require_once __DIR__ . '/connection.php';
 require_once __DIR__ . '/format_table.php';
 
 $query = "SELECT
@@ -21,8 +21,8 @@ FROM Teachers";
 $result = sqlsrv_query($connection, $query);
 
 format_table($result);
-
-/*while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
+/*
+while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
 {	echo '<tr>';
 
 	echo '<td>';

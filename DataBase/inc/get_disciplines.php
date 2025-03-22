@@ -1,10 +1,15 @@
 ﻿<?php
 
-$server_name = "EVEREST"; // Сервер на работе
+//$server_name = "EVEREST"; // Сервер на работе
+$server_name = "VANYACOMP"; // Домашний сервер
 
 $connection_info = array("UID"=>"PHP", "PWD"=>"111", "DataBase"=>"PD_212", "CharacterSet" => "UTF-8");
 
 $connection = sqlsrv_connect($server_name, $connection_info);
+
+
+//require_once __DIR__ . '/connection.php';
+require_once __DIR__ . '/format_table.php';
 
 $query = "SELECT
 		discipline_id,
@@ -15,6 +20,9 @@ FROM Disciplines";
 
 $result = sqlsrv_query($connection, $query);
 
+format_table($result);
+
+/*
 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
 {	
 	echo '<tr>';
@@ -33,6 +41,7 @@ while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
 
 	echo '</tr>';
 }
+*/
 
 sqlsrv_close($connection);
 

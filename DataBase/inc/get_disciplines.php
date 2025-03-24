@@ -1,7 +1,8 @@
 <?php
 
 //$server_name = "EVEREST"; // Сервер на работе
-$server_name = "VANYACOMP"; // Домашний сервер
+//$server_name = "VANYACOMP"; // Домашний сервер
+$server_name = "DELL"; // Домашний сервер на буке
 
 $connection_info = array("UID"=>"PHP", "PWD"=>"111", "DataBase"=>"PD_212", "CharacterSet" => "UTF-8");
 

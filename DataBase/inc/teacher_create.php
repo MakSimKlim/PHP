@@ -23,7 +23,7 @@ echo $query;
 $result = sqlsrv_query($connection, $query);
 */
 
-$query = "INSERT Teachers(last_name,first_name-middle_name,birth_date,work_since) VALUES(?,?,?,?,?)";
+$query = "INSERT Teachers(last_name,first_name,middle_name,birth_date,work_since) VALUES(?,?,?,?,?)";
 $values = array
 	(
 		$_POST['teacher_last_name'],
@@ -34,7 +34,7 @@ $values = array
 	);
 var_dump($values);
 
-$stmt = sqlsrv_prepare($connection, $query, $values);
+$stmt = sqlsrv_query($connection, $query, $values);
 
 //var_dump($result);
 var_dump($stmt);

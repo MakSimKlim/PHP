@@ -1,5 +1,10 @@
 <?php
 
+echo '<pre>';
+print_r($_REQUEST);
+echo '</pre>';
+
+
 $server_name = "DELL"; // Домашний сервер на буке
 //$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе

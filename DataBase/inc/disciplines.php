@@ -53,8 +53,9 @@
             document.getElementById("disciplines-count").textContent = `Количество дисциплин: ${count}`;
 
         };
-        request.open("GET", "get_disciplines_for_teacher.php?id="+id, true);
+        request.open("GET", `set_teacher_for_discipline.php?teacher_id=${teacher_id}&discipline_id=${discipline_id}`,true);
         request.send();
+        //window.location.reload(true);
     }
 </script>
 

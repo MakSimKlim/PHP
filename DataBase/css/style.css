@@ -1,4 +1,4 @@
-﻿body 
+body 
 {
     /*background-color:lightgreen;*/
 }
@@ -16,4 +16,10 @@ th
 {
     height:50px;
     text-align:center;
+}
+.table-with-combo
+{
+    display:flex;
+    justify-content:space-between;
+    border:solid 1px;
 }

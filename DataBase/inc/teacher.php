@@ -41,6 +41,9 @@ AND t.teacher_id = {$_REQUEST['id']}";
 		//$daterange = new DatePeriod($start_date, $interval, $end_date);
 		$daterange = date_diff(date_create($row['work_since']->format('d.m.Y')), date_create());
 		//var_dump($daterange);
+		
+		print_r($_REQUEST);
+		
 		echo '</pre>';
 
 		echo "Опыт преподавания: {$daterange->format('%y years')}";
@@ -54,6 +57,10 @@ AND t.teacher_id = {$_REQUEST['id']}";
 		} 
 		while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC));
 		echo "</ul>";
+
+		echo "<form action=\"teacher_update_form.php?id={$_REQUEST['id']}\" method=\"POST\">";
+		echo '<input type="submit" value="UPDATE">';
+		echo '</form>';
 
 
 

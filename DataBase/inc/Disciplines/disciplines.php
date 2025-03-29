@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../../css/style.css">
     <title>Disciplines</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
     <option value = "0" style="text-align:center;">
         --- Все преподаватели ---
     </option>
-    <?php require_once __DIR__ . '/get_teachers_to_combo_box.php'?>
+    <?php require_once __DIR__ . '/../Teachers/get_teachers_to_combo_box.php'?>
 </select>
 
 <table>
@@ -23,6 +23,7 @@
             <th>ID</th>
             <th>Наименование дисциплины</th>
             <th>Количество уроков</th>
+            <th>Подробности</th>
         </tr>
     </thead>
     <tbody id="table-disciplines">
@@ -42,7 +43,8 @@
         {
             if(this.readyState == 4 && this.status == 200)
             document.getElementById("table-disciplines").innerHTML = this.responseText;
-
+            console.log(this.responseText);
+            console.table(this.responseText);
             // Подсчитываем количество строк в таблице
             const rows = document.querySelectorAll("#table-disciplines tr");
             const count = rows.length;
@@ -51,10 +53,13 @@
             document.getElementById("disciplines-count").textContent = `Количество дисциплин: ${count}`;
 
         };
-        request.open("GET", "get_disciplines_for_teacher.php?id="+id, true);
+        //request.open("GET", `get_teachers_for_discipline.php?id=${id}`,true);
+        request.open("GET", `get_disciplines_for_teacher.php?id=${id}`,true);
         request.send();
+        //window.location.reload(true);
     }
 </script>
 
 </body>
 </html>
+

@@ -1,23 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <title>Teachers</title>
 </head>
 <body>
     <h1>Преподаватели</h1>
     <h2>Дисциплины</h2>
-
-    <select onchange="getTeachersForDiscipline(this.value)">
-        <!--<option value="value">text</option>-->
-        <option value = "0" style="text-align:center;">
-            --- Все дисциплины ---
-        </option>
-        <?php require_once __DIR__ . '/get_disciplines_to_combo_box.php'?>
-    </select>
-
+    <form action="teacher_create_form.html" >
+        <select onchange="getTeachersForDiscipline(this.value)">
+            <!--<option value="value">text</option>-->
+            <option value = "0" style="text-align:center;">
+                --- Все дисциплины ---
+            </option>
+            <?php require_once __DIR__ . '/../Disciplines/get_disciplines_to_combo_box.php'?>
+        </select>
+        <input type="submit" value="Добавить">
+    </form>
     <table>
         <thead>
             <tr>
@@ -25,6 +26,7 @@
                 <th>Имя</th>
                 <th>Дата рождения</th>
                 <th>Опыт работы</th>
+                <th>Подробности</th>
             </tr>
         </thead>
         <tbody id="table-teachers">
@@ -42,7 +44,7 @@
         {
             //if(id>0)
             //{
-                console.log(id);
+                //console.log(id);
                 let request = new XMLHttpRequest();
                 request.onreadystatechange = function()
                 {
@@ -63,6 +65,7 @@
                     request.send();
             //}
         }
+
     </script>
 </body>
 </html>

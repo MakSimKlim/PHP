@@ -1,11 +1,11 @@
 <?php
 
 $id=$_REQUEST["id"];
-
+//echo $_REQUEST;
 if($id>0)
 {
-require_once __DIR__ . '/connection.php';
-require_once __DIR__ . '/format_table.php';
+require_once __DIR__ . '/../connection.php';
+require_once __DIR__ . '/../format_table.php';
 
 
 $query = "SELECT	
@@ -28,6 +28,6 @@ WHERE	discipline_id = {$id}";
 }
 else
 {
-	require_once __DIR__ . '/get_teachers.php';
+	require_once __DIR__ . '/../Teachers/get_teachers.php';
 }
 ?>

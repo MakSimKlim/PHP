@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/connection.php';
+require_once __DIR__ . '/../connection.php';
 echo '<pre>';
 print_r($_REQUEST);
 echo '</pre>';

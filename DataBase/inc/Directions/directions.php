@@ -16,7 +16,7 @@ $connection = sqlsrv_connect($server_name, $connection_info);
 //var_dump($connection);
 */
 
-require_once __DIR__ . '/connection.php';
+require_once __DIR__ . '/../connection.php';
 
 $query = "SELECT * FROM Directions;";
 $results = sqlsrv_query($connection, $query);

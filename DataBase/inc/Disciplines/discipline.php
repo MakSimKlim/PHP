@@ -21,7 +21,7 @@
 			<thead>
 			</thead>
 			<tbody id="table-teachers">
-			<?php require_once __DIR__ . '/get_teachers_for_discipline.php';?>
+			<?php require_once __DIR__ . '/../Teachers/get_teachers_for_discipline.php';?>
 			</tbody>
 			</table>
 		</div>
@@ -31,7 +31,7 @@
 			<option value="0">
 			--- Добавить преподавателя ---
 			</option>
-			<?php require_once __DIR__ . "/get_teachers_to_combo_box.php"?>
+			<?php require_once __DIR__ . "/../Teachers/get_teachers_to_combo_box.php"?>
 			</select>
 			<br>
 			<input type="button" value="Добавить" style="margin-top:10px;" onclick="addTeacherForDiscipline()">

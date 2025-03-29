@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <title>Teachers</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
             <option value = "0" style="text-align:center;">
                 --- Все дисциплины ---
             </option>
-            <?php require_once __DIR__ . '/get_disciplines_to_combo_box.php'?>
+            <?php require_once __DIR__ . '/../Disciplines/get_disciplines_to_combo_box.php'?>
         </select>
         <input type="submit" value="Добавить">
     </form>

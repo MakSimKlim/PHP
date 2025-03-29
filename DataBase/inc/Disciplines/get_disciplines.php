@@ -10,7 +10,7 @@ $connection = sqlsrv_connect($server_name, $connection_info);
 
 
 //require_once __DIR__ . '/connection.php';
-require_once __DIR__ . '/format_table.php';
+require_once __DIR__ . '/../format_table.php';
 
 //$query = "SELECT
 //		discipline_id,

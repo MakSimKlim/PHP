@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../../css/style.css">
     <title>Disciplines</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
     <option value = "0" style="text-align:center;">
         --- Все преподаватели ---
     </option>
-    <?php require_once __DIR__ . '/get_teachers_to_combo_box.php'?>
+    <?php require_once __DIR__ . '/../Teachers/get_teachers_to_combo_box.php'?>
 </select>
 
 <table>
@@ -53,7 +53,8 @@
             document.getElementById("disciplines-count").textContent = `Количество дисциплин: ${count}`;
 
         };
-        request.open("GET", `set_teacher_for_discipline.php?teacher_id=${teacher_id}&discipline_id=${discipline_id}`,true);
+        //request.open("GET", `get_teachers_for_discipline.php?id=${id}`,true);
+        request.open("GET", `get_disciplines_for_teacher.php?id=${id}`,true);
         request.send();
         //window.location.reload(true);
     }

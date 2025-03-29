@@ -3,7 +3,7 @@
 //print_r($_REQUEST);
 //echo '</pre>';
 
-require_once __DIR__ . '/connection.php';
+require_once __DIR__ . '/../connection.php';
 $query	= "INSERT TeachersDisciplinesRelation(teacher,discipline) VALUES(?,?)";
 $values = array
 (

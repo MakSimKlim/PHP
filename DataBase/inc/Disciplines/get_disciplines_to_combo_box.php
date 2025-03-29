@@ -8,7 +8,7 @@
 
 //$connection = sqlsrv_connect($server_name, $connection_info);
 
-require_once __DIR__ . '/connection.php';
+require_once __DIR__ . '/../connection.php';
 
 $query = "SELECT discipline_id, discipline_name FROM disciplines";
 $result = sqlsrv_query($connection, $query);

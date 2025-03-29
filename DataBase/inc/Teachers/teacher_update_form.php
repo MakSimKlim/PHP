@@ -1,5 +1,5 @@
 ﻿<?php
-require_once __DIR__ . '/connection.php';
+require_once __DIR__ . '/../connection.php';
     $query = "SELECT * FROM Teachers WHERE teacher_id={$_REQUEST['id']}";
     $result = sqlsrv_query($connection, $query);
     echo '<pre>';

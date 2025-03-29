@@ -21,7 +21,7 @@ function format_table($result)
 		$record = explode('_', array_keys($row)[0])[0];
 		//$filename = $record.'php';
 		$id = $record.'_id';
-		echo "<a href=\"{$record}.php?id={$row[$id]}\">Подробно</a>";
+		echo "<a href=\"../{$record}s/{$record}.php?id={$row[$id]}\">Подробно</a>";
 		echo '</td>';
 		echo "</tr>";
 	}

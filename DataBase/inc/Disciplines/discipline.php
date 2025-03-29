@@ -63,7 +63,7 @@
 				{
 					document.getElementById("table-teachers").innerHTML = this.responseText;
 				}
-				request.open("GET", `get_teachers_for_discipline.php?id=${discipline_id}`,true);
+				request.open("GET", `../Teachers/get_teachers_for_discipline.php?id=${discipline_id}`,true);
 				request.send();
 
 			}

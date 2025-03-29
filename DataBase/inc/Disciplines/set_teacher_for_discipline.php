@@ -18,7 +18,7 @@ $stmt = sqlsrv_query($connection, $query, $values);
 
 
 $_REQUEST['id'] = $_REQUEST['discipline_id'];
-require_once __DIR__ . "/get_teacher_for_discipline.php";
+require_once __DIR__ . "/../Teachers/get_teacher_for_discipline.php";
 //require_once __DIR__ . "/get_teacher_for_discipline.php?id={$_REQUEST['discipline_id']}";
 //sqlsrv_close($connection);
 ?>

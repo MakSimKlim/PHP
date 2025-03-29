@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 //$server_name = "VANYACOMP"; // Домашний сервер
 //$server_name = "EVEREST"; // Сервер на работе
